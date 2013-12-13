@@ -1,0 +1,44 @@
+import com.sun.org.apache.regexp.internal.recompile
+
+buildscript {
+  repositories {
+    maven { url "http://repo.spring.io/libs-snapshot" }
+    mavenLocal()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:0.5.0.M6")
+  }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+  baseName = 'cf-mysql-java-broker'
+  version = '0.1.0'
+}
+
+repositories {
+  mavenCentral()
+  maven { url "http://repo.spring.io/libs-snapshot" }
+}
+
+dependencies {
+  compile "org.codehaus.groovy:groovy-all:2.1.7"
+  compile "org.springframework.boot:spring-boot-starter-web:0.5.0.M6"
+  compile "org.springframework.boot:spring-boot-starter-actuator:0.5.0.M6"
+  compile "org.springframework:spring-jdbc:4.0.0.M3"
+  compile "org.yaml:snakeyaml:1.13"
+  runtime "org.codehaus.jackson:jackson-mapper-asl:1.9.12"
+  runtime "mysql:mysql-connector-java:5.1.27"
+  runtime "org.apache.tomcat:tomcat-jdbc:7.0.47"
+//  runtime "org.hsqldb:hsqldb:2.3.1"
+
+  testCompile "junit:junit:4.11"
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.9'
+}

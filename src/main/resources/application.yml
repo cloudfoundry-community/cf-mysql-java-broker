@@ -1,0 +1,12 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: cf-mysql-java-broker
+  datasource:
+    url: jdbc:mysql://localhost/test
+    username: root
+    password: root
+    driverClassName: com.mysql.jdbc.Driver
+  main:
+    show_banner: false
