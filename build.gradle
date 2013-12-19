@@ -1,5 +1,3 @@
-import com.sun.org.apache.regexp.internal.recompile
-
 buildscript {
   repositories {
     maven { url "http://repo.spring.io/libs-snapshot" }

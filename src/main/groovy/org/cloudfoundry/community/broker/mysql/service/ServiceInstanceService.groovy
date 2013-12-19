@@ -42,10 +42,7 @@ class ServiceInstance {
   String database
 
   ServiceInstance(String id) {
-    if (id =~ /[^0-9,a-z,A-Z$-]+/) {
-      id.replaceAll('-', '_')
-    }
-
+    id.replaceAll('-', '_')
     database = "${DATABASE_PREFIX}${id}"
   }
 }
