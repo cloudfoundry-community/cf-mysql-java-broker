@@ -42,7 +42,7 @@ class ServiceInstance {
   String database
 
   ServiceInstance(String id) {
-    id.replaceAll('-', '_')
-    database = "${DATABASE_PREFIX}${id}"
+    String s = id.replaceAll('-', '_')
+    database = "${DATABASE_PREFIX}${s}"
   }
 }
